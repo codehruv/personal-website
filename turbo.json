@@ -1,0 +1,65 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "agentGuidance": false,
+  "globalDependencies": [
+    "tsconfig.base.json",
+    "eslint.config.base.ts",
+    ".prettierrc.json",
+    ".prettierignore"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "!src/**/*.test.ts", "tsconfig.json", "package.json"],
+      "outputs": ["dist/**"]
+    },
+    "generate": {
+      "dependsOn": ["^generate", "^build", "build"],
+      "cache": false
+    },
+    "typecheck": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "tests/**", "*.ts", "tsconfig*.json", "package.json"],
+      "outputs": []
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**", "tests/**", "*.ts", "tsconfig*.json", "package.json"],
+      "outputs": []
+    },
+    "lint:fix": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "test:unit": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "src/**",
+        "tests/**",
+        "features/**",
+        "openapi/**",
+        "vitest.config.ts",
+        "tsconfig*.json",
+        "package.json"
+      ],
+      "outputs": []
+    },
+    "clean": {
+      "cache": false
+    },
+    "docs:check": {
+      // ^build makes a change to @dbp/server-docs-gen, which runs the check, invalidate the cache.
+      "dependsOn": ["^build"],
+      "inputs": [
+        "src/**",
+        "tests/docs/**",
+        "tests/features/**",
+        "features/**",
+        "docs/**",
+        "tsconfig*.json",
+        "package.json"
+      ],
+      "outputs": []
+    }
+  }
+}
