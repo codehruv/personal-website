@@ -19,8 +19,8 @@ catalogs:
       specifier: ^5.0.2
       version: 5.0.2
     '@cucumber/gherkin':
-      specifier: ^42.0.1
-      version: 42.0.1
+      specifier: ^43.0.0
+      version: 43.0.0
     '@cucumber/messages':
       specifier: ^34.2.1
       version: 34.2.1
@@ -221,7 +221,7 @@ importers:
     dependencies:
       '@cucumber/gherkin':
         specifier: 'catalog:'
-        version: 42.0.1
+        version: 43.0.0
       '@cucumber/messages':
         specifier: 'catalog:'
         version: 34.2.1
@@ -442,8 +442,8 @@ packages:
     peerDependencies:
       commander: ~15.0.0
 
-  '@cucumber/gherkin@42.0.1':
-    resolution: {integrity: sha512-Kqg0ULhWqbXp/a1c04ND4sS4KTlIL831tQ0NhZLXWdEhT6LiNsZ5LFRzy/lBy7QQpcKhroKp/i3C2WdEnRBKNg==}
+  '@cucumber/gherkin@43.0.0':
+    resolution: {integrity: sha512-WaEgGoOVJ8yU2kyMBLxhdlSXmF/zOjdH6EUIzxEZV1UrgAekuOFjDzqYoC5LuN3PGWjjBYX9pu8l9MBn6mFMow==}
 
   '@cucumber/messages@34.2.1':
     resolution: {integrity: sha512-aj2iCAG9ZOpMVcMxcgShifv5fbR96b7SMgdWcPXXh2QbFp7OEcAnQ5MC5YfWUDSDasmw7FU5NJEsOrXdTQOU1A==}
@@ -2492,7 +2492,7 @@ snapshots:
     dependencies:
       commander: 15.0.0
 
-  '@cucumber/gherkin@42.0.1':
+  '@cucumber/gherkin@43.0.0':
     dependencies:
       '@cucumber/messages': 34.2.1
 
